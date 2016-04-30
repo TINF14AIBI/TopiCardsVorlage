@@ -1,0 +1,72 @@
+\documentclass[8pt,a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{fancyhdr}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[style=numeric,defernumbers=true,backend=bibtex]{biblatex}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{boxedminipage}
+\usepackage{multicol}
+\usepackage{enumitem} 
+\usepackage{caption}
+
+%Kopf- und Fußzeilendefinition:
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Kapitel: \leftmark}
+\rfoot{Seite \thepage}
+
+%Itemize-Umgebung:
+\setitemize{leftmargin=8.5pt, itemsep=0pt} 
+
+%Seitenränder:
+\setlength{\topmargin}{-15mm}
+%\setlength{\headsep}{4mm}
+\setlength{\oddsidemargin}{-15mm}
+\setlength{\textwidth}{18.9cm}
+\setlength{\textheight}{24.5cm}
+%\setlength{\footskip}{0cm}
+\setlength{\headwidth}{\textwidth}
+
+%Multicol Parameter:
+%\columnseprule1pt 
+\columnsep5mm 
+
+%Abstand vor und nach Überschrift:
+\RedeclareSectionCommands[
+  beforeskip=-.75\baselineskip,
+  afterskip=.25\baselineskip]{subsection,subsubsection}
+  
+%Definitionen:
+\setlength{\smallskipamount}{1.5mm}
+\defbibheading{subbibliography}{%
+\subsection*{Literaturverweise für Kapitel \thesection}}
+\renewcommand{\bibfont}{\normalfont\small} 
+
+\newenvironment{Figure}
+  {\par\smallskip\noindent\minipage{\linewidth}}
+  {\endminipage\smallskip\par}
+
+%Wer schaut schon hier rein? Das ist für mehrspaltige Bilder gedacht
+%\newenvironment{FigureFullWidth}
+%  {\par\smallskip\noindent\minipage{\textwidth}}
+%  {\endminipage\smallskip\par}
+  
+\captionsetup[figure]{skip=0pt}
+  
+%BibTex-Ressourcen:
+\addbibresource{./Kapitel/Vorlage/vorlageBib}
+
+
+
+
+
+\title{Vorlage}
+\author{Redaktion}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
