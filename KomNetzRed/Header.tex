@@ -1,5 +1,8 @@
 \documentclass[8pt,a4paper]{scrartcl}
 
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[table]{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -13,11 +16,28 @@
 \usepackage{enumitem} 
 \usepackage{caption}
 
+\definecolor{iot}{HTML}{3399EE}
+\definecolor{access}{HTML}{EE3333}
+\definecolor{mobile}{HTML}{33EE99}
+
+
+
 %Kopf- und Fußzeilendefinition:
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Kapitel: \leftmark}
-\rfoot{Seite \thepage}
+\newcommand{\topicolor}{white}
+
+\lhead{ \strut\rlap{\color{\topicolor}\rule[-\dp\strutbox]{\headwidth}{\headheight}}%
+  \nouppercase{\textsc{\leftmark}}}
+\rfoot{\nouppercase{\textsc{\thepage}}}
+% footer background should also be \topicolor. We have to do a bit of nasty stuff here.
+\let\oldlfoot\lfoot
+\renewcommand{\lfoot}[1]{\oldlfoot{ \strut\rlap{\color{\topicolor}\rule[-\dp\strutbox]{\headwidth}{\headheight}}%
+  \nouppercase{\textsc{#1}}}}
+\let\oldrhead\rhead
+\renewcommand{\rhead}[1]{\oldrhead{\nouppercase{\textsc{#1}}}}
+% no header separation line
+\renewcommand{\headrule}{}
 
 %Itemize-Umgebung:
 \setitemize{leftmargin=8.5pt, itemsep=0pt} 
@@ -70,3 +90,5 @@
 \maketitle
 \tableofcontents
 \newpage
+
+\renewcommand{\topicolor}{iot}
