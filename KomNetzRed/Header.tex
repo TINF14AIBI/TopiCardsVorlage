@@ -14,21 +14,22 @@
 \usepackage{boxedminipage}
 \usepackage{multicol}
 \usepackage{enumitem} 
-\usepackage{caption}
+\usepackage[font=footnotesize]{caption}
 
 \definecolor{iot}{HTML}{3399EE}
 \definecolor{access}{HTML}{EE3333}
 \definecolor{mobile}{HTML}{33EE99}
 
-
+\usepackage{wrapfig}  % Package added
 
 %Kopf- und Fußzeilendefinition:
 \pagestyle{fancy}
 \fancyhf{}
 \newcommand{\topicolor}{white}
 
+\newcommand{\topicategory}{}
 \lhead{ \strut\rlap{\color{\topicolor}\rule[-\dp\strutbox]{\headwidth}{\headheight}}%
-  \nouppercase{\textsc{\leftmark}}}
+  \nouppercase{\textsc{\topicategory}}}
 \rfoot{\nouppercase{\textsc{\thepage}}}
 % footer background should also be \topicolor. We have to do a bit of nasty stuff here.
 \let\oldlfoot\lfoot
@@ -40,7 +41,7 @@
 \renewcommand{\headrule}{}
 
 %Itemize-Umgebung:
-\setitemize{leftmargin=8.5pt, itemsep=0pt} 
+\setitemize{leftmargin=8.5pt,topsep=0pt,itemsep=0pt,partopsep=0pt,parsep=0pt} 
 
 %Seitenränder:
 \setlength{\topmargin}{-15mm}
@@ -54,6 +55,8 @@
 %Multicol Parameter:
 %\columnseprule1pt 
 \columnsep5mm 
+
+\setkomafont{section}{\LARGE}
 
 %Abstand vor und nach Überschrift:
 \RedeclareSectionCommands[
@@ -75,10 +78,23 @@
 %  {\par\smallskip\noindent\minipage{\textwidth}}
 %  {\endminipage\smallskip\par}
   
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+
 \captionsetup[figure]{skip=0pt}
   
 %BibTex-Ressourcen:
 \addbibresource{./Kapitel/Vorlage/vorlageBib}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -92,3 +108,4 @@
 \newpage
 
 \renewcommand{\topicolor}{iot}
+\renewcommand{\topicategory}{Home Automation/Internet of Things}
