@@ -36,12 +36,14 @@ Für diejenigen, die \LaTeX~noch nicht kennen, gibt es im nächsten Abschnitt ei
 
 Solltet ihr eine \LaTeX-Umgebung haben, könnt ihr über das Hauptdokument eure Änderungen testen, aber seit gewarnt: Ihr müsst einige Pakete installieren, um dies durchzuführen.
 
-\subsection*{Technologie}
+\subsection*{Technische Erläuterung}
 Über im Header angeforderte Pakete und gesetzte Definitionen wird das gesamte Dokument so eingestellt, das es aussieht, wie gerade jetzt. Zur Umwandlung von \LaTeX~ins \textbf{Pdf}-Format (\textbf{P}rintable \textbf{D}ata \textbf{F}ormat) könnt ihr zum Beispiel das Softwarepaket MikTex benutzen. Dort ist das Programm TeXworks enthalten mit dem ich dieses Dokument erstellt habe. Auf einschlägigen Seiten oder bei anderen Nutzern könnt ihr euch mehr darüber informieren, insofern ihr das wollt. 
 
-Im Grunde fungiert die Umgebung, die ihr installieren müsst, wie nichts anderes als eine Entwicklungsumgebung, wie zum Beispiel Eclipse. Ihr stellt ein wie es umgewandelt werden soll und der Rest passiert im Hintergrund. Beim Kompilieren werden euch unterschiedliche Einstellungen geboten. Ich verwende \enquote{pdfLatex + MakeIndex + BibTex} (Auch wenn genau genommen kein Index verwendet wird. TeXworks ignoriert diesen Schritt dann.). Alternativ und wahrscheinlich sogar lehrreicher ist das Kompilieren über BibTex und anschließend über pdfLatex. 
+Im Grunde fungiert die Umgebung, die ihr installieren müsst, wie nichts anderes als eine Entwicklungsumgebung, wie zum Beispiel \footnote{Eclipse\url{https://eclipse.org/}}. Ihr stellt ein wie es umgewandelt werden soll und der Rest passiert im Hintergrund. Beim Kompilieren werden euch unterschiedliche Einstellungen geboten. Ich verwende \enquote{pdfLatex + MakeIndex + BibTex} (Auch wenn genau genommen kein Index verwendet wird. TeXworks ignoriert diesen Schritt dann.). Alternativ und wahrscheinlich sogar lehrreicher ist das Kompilieren über BibTex und anschließend über pdfLatex. 
 
 Was passiert? Über die Einstellung BibTex bekommt TeXworks die Anweisung für das Hauptdokument alle eingebundenen BibTex-Dateien, hier zu unter Gremien mehr, zusammenzutragen. Es entstehen mehrere Dateien und am Ende eine mit dem Titel \enquote{Hauptdokument-blx.bib}. Bei pdfLatex wird diese Datei mit herangezogen, wenn ihr im Text zitiert und auf die Quelle referenziert. Beispiele sind im nachfolgenden Text eingestreut. 
+
+
 
 \subsection*{Einsatz}
 In Zeile 3 kommt in die geschweifte Klammer hinter \enquote{section} euer Titel des Themas. In der darauffolgenden Zeile ersetzt ihr den Autor und dann das Bearbeitungsdatum.
@@ -83,7 +85,7 @@ Zu guter Letzt solltet ihr innerhalb des Textes auch auf das Bild verweisen. Daf
 
 Im nächsten Abschnitt gehen ich etwas genauer auf BibTex und die Referenzierung im Text ein.
 
-\subsection*{Hersteller und Standardisierung}
+\subsection*{Anbieter und Gremien}
 \textbf{Bibetex!} 
 
 (Mit \enquote{\textbackslash textbf\{Mein Text\}} geht übrigens fette Schrift. Mit \enquote{textit} würdet ihr kursiv erreichen)
