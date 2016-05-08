@@ -1,31 +1,37 @@
 \begin{multicols}{3}[\section{Formatvorlage}]
 
-\rhead{Autor: Alexander Härtel}
-\lfoot{Letzte Bearbeitung: 10.04.2016}
+\rhead{Alexander Härtel, Elias Holz}
+\lfoot{08.05.2016}
 
 \newrefsegment
 
-\begin{boxedminipage}{\linewidth}
 \begin{tabular}{p{2,1 cm}p{2.7 cm}}
 \textbf{Steckbrief}& \\
 \end{tabular}
-\begin{tabular}{p{2,1 cm}|p{2.7 cm}}
+\rowcolors{1}{\topicolor!20}{}
+\begin{tabular}{p{2,1 cm}p{2.7 cm}}
       Einsatz seit & 20.03.2016\\
-      \hline
       Frequenz"-bereich  & \SI{2500}{\giga\hertz}\\
-      \hline
       Datenrate & \SI{777}{bit/s}\\
-      \hline
       Verbreitung & Weltweit, Scientific Community\\
-      \hline
       Reichweite & \SI{500}{\kilo\metre}\\
+      Modulation & TDMA, SDMA\\
+      Sendeleistung & 69 Watt\\
+      Verschlüsselung & Caesar-Verschlüsselung\\
 \end{tabular}
-\end{boxedminipage}
 \par
 %Source http://www.fh-bingen.de/fileadmin/user_upload/Lehrende/Kilsch_Dieter/internet/projekte/TedoSchStiUnits.pdf -> Seite 9 findet ihr alle verwendbaren Einheiten, wie:
 %\SI{Zahl}{\mega\hertz} oder \SI{Zahl}{\mili\metre}
 %Ich weiß ehrlich gesagt nicht welche Einheiten ihr im Text genau braucht, aber in dem Dokument und mit obigen Beispiel sollte es umsetzbar ein.
 \subsection*{Überblick}
+\begin{wrapfigure}{r}{0.4\linewidth}
+  \vspace{-20pt}
+  \begin{center}
+  	\hspace{-20pt}
+    \includegraphics[width=0.7\linewidth]{Kapitel/Vorlage/Grafiken/logo.jpg}
+  \end{center}
+  \vspace{-15pt}
+\end{wrapfigure}
 Diese Vorlage ist der erste vollständige funktionierende Entwurf für die von euch zu verfassenden Kapitel. Es besteht essentiell aus 4 Dateien:
 \begin{itemize}
 	\item Header
@@ -38,12 +44,14 @@ Für diejenigen, die \LaTeX~noch nicht kennen, gibt es im nächsten Abschnitt ei
 
 Solltet ihr eine \LaTeX-Umgebung haben, könnt ihr über das Hauptdokument eure Änderungen testen, aber seit gewarnt: Ihr müsst einige Pakete installieren, um dies durchzuführen.
 
-\subsection*{Technische Erläuterungen}
-Über im Header angeforderte Pakete und gesetzte Definitionen wird das gesamte Dokument so eingestellt, das es aussieht, wie gerade jetzt. Zur Umwandlung von \LaTeX~ins Pdf-Format könnt ihr zum Beispiel das Softwarepaket MikTex benutzen. Dort ist das Programm TeXworks enthalten mit dem ich dieses Dokument erstellt habe. Auf einschlägigen Seiten oder bei anderen Nutzern könnt ihr euch mehr darüber informieren, insofern ihr das wollt. 
+\subsection*{Technische Erläuterung}
+Über im Header angeforderte Pakete und gesetzte Definitionen wird das gesamte Dokument so eingestellt, das es aussieht, wie gerade jetzt. Zur Umwandlung von \LaTeX~ins \textbf{Pdf}-Format (\textbf{P}rintable \textbf{D}ata \textbf{F}ormat) könnt ihr zum Beispiel das Softwarepaket MikTex benutzen. Dort ist das Programm TeXworks enthalten mit dem ich dieses Dokument erstellt habe. Auf einschlägigen Seiten oder bei anderen Nutzern könnt ihr euch mehr darüber informieren, insofern ihr das wollt. 
 
-Im Grunde fungiert die Umgebung, die ihr installieren müsst, wie nichts anderes als eine Entwicklungsumgebung, wie zum Beispiel Eclipse. Ihr stellt ein wie es umgewandelt werden soll und der Rest passiert im Hintergrund. Beim Kompilieren werden euch unterschiedliche Einstellungen geboten. Ich verwende \enquote{pdfLatex + MakeIndex + BibTex} (Auch wenn genau genommen kein Index verwendet wird. TeXworks ignoriert diesen Schritt dann.). Alternativ und wahrscheinlich sogar lehrreicher ist das Kompilieren über BibTex und anschließend über pdfLatex. 
+Im Grunde fungiert die Umgebung, die ihr installieren müsst, wie nichts anderes als eine Entwicklungsumgebung, wie zum Beispiel \footnote{Eclipse\url{https://eclipse.org/}}. Ihr stellt ein wie es umgewandelt werden soll und der Rest passiert im Hintergrund. Beim Kompilieren werden euch unterschiedliche Einstellungen geboten. Ich verwende \enquote{pdfLatex + MakeIndex + BibTex} (Auch wenn genau genommen kein Index verwendet wird. TeXworks ignoriert diesen Schritt dann.). Alternativ und wahrscheinlich sogar lehrreicher ist das Kompilieren über BibTex und anschließend über pdfLatex. 
 
 Was passiert? Über die Einstellung BibTex bekommt TeXworks die Anweisung für das Hauptdokument alle eingebundenen BibTex-Dateien, hier zu unter Gremien mehr, zusammenzutragen. Es entstehen mehrere Dateien und am Ende eine mit dem Titel \enquote{Hauptdokument-blx.bib}. Bei pdfLatex wird diese Datei mit herangezogen, wenn ihr im Text zitiert und auf die Quelle referenziert. Beispiele sind im nachfolgenden Text eingestreut. 
+
+
 
 \subsection*{Einsatz}
 In Zeile 3 kommt in die geschweifte Klammer hinter \enquote{section} euer Titel des Themas. In der darauffolgenden Zeile ersetzt ihr den Autor und dann das Bearbeitungsdatum.
@@ -52,7 +60,7 @@ In Zeile 3 kommt in die geschweifte Klammer hinter \enquote{section} euer Titel 
 \captionof{figure}{Vorlesungssaal der DHBW Mannheim~\cite{vorlage.7}}
 \label{fig:vorlage.vorlesungssaal}
 \end{Figure}
-Das Bild \ref{fig:vorlage.vorlesungssaal} hat eigentlich keinen Bezug zu dem ganzen Text. Erzeugt jedoch einen ordentlichen und schönen Einblick in einen Vorlesungssaal, den man zweimal im Jahr betritt.
+Das Abb. \ref{fig:vorlage.vorlesungssaal} hat eigentlich keinen Bezug zu dem ganzen Text. Erzeugt jedoch einen ordentlichen und schönen Einblick in einen Vorlesungssaal, den man zweimal im Jahr betritt.
 
 Mit Zeile 9 befindet ihr euch im Steckbrief. In \LaTeX-Tabellen werden Spalten in der Regel durch \enquote{\&} getrennt und Zeilen durch Doppelslash beendet. Interessant sind hier die Einheiten, die ihr verwendet müsst. Ich habe einige Beispiele auskommentiert (Alles hinter einem \enquote{\%} ist ein ordinärer Kommentar). Sollte eure gewünschte Einheit nicht dabei sein, fragt bei uns nach oder informiert euch über das Paket \enquote{siunitx}~\cite{vorlage.1}.
 
@@ -69,7 +77,7 @@ Das ist natürlich möglich. Dafür müsst ihr ein Statement der Form \enquote{\
 \captionof{figure}{Titelbild der Zemath der DHBW~\cite{vorlage.8}}
 \label{fig:vorlage.zemath}
 \end{Figure}
-Auch zu dem Bild \ref{fig:vorlage.zemath} lässt sich nur sagen, das es eigentlich nichts mit dem Text zu tun hat. Es ist ein Aushängeschild einer Organisation, die uns Studenten helfen soll.
+Auch zu dem Abb. \ref{fig:vorlage.zemath} lässt sich nur sagen, das es eigentlich nichts mit dem Text zu tun hat. Es ist ein Aushängeschild einer Organisation, die uns Studenten helfen soll.
 
 Bilder sollen einen Text auflockern und Informationen komprimieren sagt man und für das Einfügen braucht man ein Statement, das ihr zweimal in diesem Text begutachten könnt. 
 
@@ -109,20 +117,14 @@ Ein Eintrag beginnt mit @ und der Kategorie, in die die Quelle passt. In geschwe
 \includegraphics[width=\textwidth]{Kapitel/Vorlage/Grafiken/Zeitstrahl}
 \par
 \noindent
-\begin{tabular}{|p{1 cm}|p{3 cm}|p{13.55 cm}|}
-	\hline
-	Nummer & Datum & Entwicklungsschritte~\cite{vorlage.3}\\
-	\hline
-	1 & Anfang 1980er Jahre & Leslie Lamp entwickelt auf \TeX aufbauend eine Sammlung von \TeX-Makros für den durchschnittlichen Anwender.\\
-	\hline
-	2 & 1989 & Beginn der Entwicklung der aktuellen Version \LaTeX 2.\\
-	\hline
+\rowcolors{2}{}{\topicolor!20}
+\begin{tabular}{p{0.5 cm}p{1.5 cm}p{15.55 cm}}
+	Nr. & Datum & Entwicklungsschritte~\cite{vorlage.3}\\
+	1 & Anfang 80er & Leslie Lamp entwickelt auf \TeX aufbauend eine Sammlung von \TeX-Makros für den durchschnittlichen Anwender.\\
+	2 & 1989 & Die Berliner Mauer fiel in der Nacht von Donnerstag, dem 9. November, auf Freitag, den 10. November 1989, nach über 28 Jahren ihrer Existenz.\\
 	3 & 1990 & Ende von Leslie Lamp's \LaTeX-Entwicklung mit Version 2.09.\\
-	\hline
-	4 & Mitte der 1990er Jahre & \LaTeX wird am weitesten verbreitete Methode \TeX zu verwenden.\\
-	\hline
+	4 & Mitte 90er  & \LaTeX wird am weitesten verbreitete Methode \TeX zu verwenden.\\
 	5 & 20.03.2016 & Beginn der Entwicklung dieser Vorlage in \LaTeX.\\
-	\hline
 \end{tabular}
 \par
 \begin{multicols}{3}
